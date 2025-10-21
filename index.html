@@ -6,35 +6,7 @@
   <title>Brooklyn Halmstad — Some sites I use.</title>
   <meta name="description" content="Contact information for Brooklyn Halmstad." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23221a44'/%3E%3Ctext x='50' y='60' font-size='46' text-anchor='middle' fill='%23ffffff' font-family='ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial'%3EBH%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root{
-      --bg: #17132b;
-      --fg: #f7f6ff;
-      --muted: #c9c4e6;
-      --link: #9b87f5;
-      --link-hover: #b3a6ff;
-      --rule: #2a234b;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-    .wrap{max-width:720px; margin:0 auto; padding:40px 20px 24px}
-    h1{font-size:32px; margin:0 0 6px}
-    h2{font-size:22px; margin:28px 0 10px; border-bottom:1px solid var(--rule); padding-bottom:4px}
-    .sub{color:var(--muted); margin:0 0 24px}
-    section{margin:22px 0}
-    hr{border:0; height:1px; background:var(--rule); margin:22px 0}
-    .label{display:inline-block; width:110px; color:var(--muted)}
-    a{color:var(--link); text-decoration:none; cursor:pointer}
-    a:hover{color:var(--link-hover); text-decoration:underline}
-    .redacted{filter: blur(6px); background:#2a234b; border-radius:4px; padding:0 4px; transition:filter .4s ease, background .4s ease, color .4s ease; user-select:none}
-    .revealed{filter:blur(0); background:none; color:var(--fg); user-select:auto}
-    address{font-style:normal}
-    footer{margin-top:30px; color:var(--muted); font-size:13px}
-  </style>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
   <main class="wrap">
@@ -68,12 +40,10 @@
 
     <hr/>
 
-    <footer>© <span id="y"></span> Brooklyn Halmstad — Sadly Coded by GPT 5 — Don't worry I'm learning!</footer>
+    <footer>Brooklyn Halmstad — <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">This website is public domain</a></footer>
   </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
     const phone = document.getElementById('phone');
     let revealed = false;
 
