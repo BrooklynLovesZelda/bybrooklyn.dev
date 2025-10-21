@@ -18,10 +18,26 @@
 
     <section aria-label="Contact information">
       <address>
-        <div><span class="label">Phone</span> <a id="phone" class="redacted">+1 (601) 966-8473</a></div>
-        <div><span class="label">Email</span> <a href="mailto:you@bybrooklyn.dev">you@bybrooklyn.dev</a></div>
-        <div><span class="label">Github</span> <a href="https://Github.com/BrooklynLovesZelda">github.com</a></div>
-        <div><span class="label">Projects</span> <a href="https://Zavice.org/index.html">zavice.org</a></div>
+        <dl class="contact-list">
+          <dt>Phone</dt>
+          <dd>
+            <a
+              id="phone"
+              class="redacted"
+              href="#phone"
+              role="button"
+              aria-expanded="false"
+              aria-label="Reveal phone number"
+              data-number="+16019668473"
+            >+1 (601) 966-8473</a>
+          </dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:you@bybrooklyn.dev">you@bybrooklyn.dev</a></dd>
+          <dt>Github</dt>
+          <dd><a href="https://Github.com/BrooklynLovesZelda">github.com</a></dd>
+          <dt>Projects</dt>
+          <dd><a href="https://Zavice.org/index.html">zavice.org</a></dd>
+        </dl>
       </address>
     </section>
 
@@ -35,26 +51,48 @@
       <p>Python • HTML • CSS • JavaScript • Docker • Linux • Git</p>
       <p>Software: PyCharm Community Edition, Visual Studio Code</p>
       <p>Hardware: MacBook Air (2025) • A custom built system</p>
-      <p>Server Software: <a href="https://ubuntu.com/download/server" target="_blank">Ubuntu Server 25.10</a> • <a href="https://github.com/IceWhaleTech/CasaOS" target="_blank">CasaOS</a> • <a href="https://yams.media/" target="_blank">Yams</a></p>
+      <p>Server Software: <a href="https://ubuntu.com/download/server" target="_blank" rel="noopener noreferrer">Ubuntu Server 25.10</a> • <a href="https://github.com/IceWhaleTech/CasaOS" target="_blank" rel="noopener noreferrer">CasaOS</a> • <a href="https://yams.media/" target="_blank" rel="noopener noreferrer">Yams</a></p>
     </section>
 
     <hr/>
 
-    <footer>Brooklyn Halmstad — <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">This website is public domain</a></footer>
+    <footer>Brooklyn Halmstad — <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">This website is public domain</a></footer>
   </main>
 
   <script>
     const phone = document.getElementById('phone');
-    let revealed = false;
 
-    phone.addEventListener('click', () => {
-      if (!revealed) {
+    if (phone) {
+      let revealed = phone.classList.contains('revealed');
+
+      const revealPhone = () => {
         phone.classList.add('revealed');
         phone.classList.remove('redacted');
-        // phone.href = '+16019668473';
+        phone.setAttribute('aria-expanded', 'true');
+        phone.setAttribute('aria-label', `Phone number ${phone.textContent.trim()}`);
+        phone.href = `tel:${phone.dataset.number}`;
+        phone.removeAttribute('role');
         revealed = true;
-      }
-    });
+      };
+
+      phone.addEventListener('click', (event) => {
+        if (!revealed) {
+          event.preventDefault();
+          revealPhone();
+        }
+      });
+
+      phone.addEventListener('keydown', (event) => {
+        if (event.key === ' ') {
+          event.preventDefault();
+          if (!revealed) {
+            revealPhone();
+          } else {
+            phone.click();
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>

@@ -18,9 +18,28 @@ h2{font-size:22px; margin:28px 0 10px; border-bottom:1px solid var(--rule); padd
 .sub{color:var(--muted); margin:0 0 24px}
 section{margin:22px 0}
 hr{border:0; height:1px; background:var(--rule); margin:22px 0}
-.label{display:inline-block; width:110px; color:var(--muted)}
+.contact-list{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  column-gap:12px;
+  row-gap:12px;
+  margin:0;
+  padding:0;
+}
+.contact-list dt{
+  margin:0;
+  color:var(--muted);
+}
+.contact-list dd{
+  margin:0;
+}
 a{color:var(--link); text-decoration:none; cursor:pointer}
 a:hover{color:var(--link-hover); text-decoration:underline}
+.redacted:focus-visible,
+.revealed:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:2px;
+}
 .redacted{filter: blur(6px); background:#2a234b; border-radius:4px; padding:0 4px; transition:filter .4s ease, background .4s ease, color .4s ease; user-select:none}
 .revealed{filter:blur(0); background:none; color:var(--fg); user-select:auto}
 address{font-style:normal}
