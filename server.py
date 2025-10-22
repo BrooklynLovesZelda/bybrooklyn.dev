@@ -48,10 +48,10 @@ ROOT_DIR = Path(__file__).resolve().parent
 DATABASE_PATH = ROOT_DIR / os.environ.get("BLOG_DB_PATH", "blog.db")
 SESSION_HOURS = int(os.environ.get("BLOG_SESSION_HOURS", "12"))
 DEFAULT_PASSWORD_HASH = (
-    "d7e0462a864001404c9e3bd1fa559b1e5701fca134bf918315a644f450987ad9"
+    "f9a5c1d1020a7c973e6a71f554b2704ff615c4e9f7782cae1f74c95d2fbdee72"
 )
 ADMIN_PASSWORD_HASH = os.environ.get("ADMIN_PASSWORD_HASH", DEFAULT_PASSWORD_HASH)
-ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "brooklyn")
 
 app = Flask(__name__, static_folder=str(ROOT_DIR), static_url_path="")
 

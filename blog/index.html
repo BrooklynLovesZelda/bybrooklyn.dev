@@ -24,25 +24,6 @@
       <p class="notice">This page requires JavaScript for sign-in and saving posts.</p>
     </noscript>
 
-    <section id="auth-panel" class="panel" aria-label="Sign in">
-      <h2>Sign in</h2>
-      <p class="note">Use your admin credentials to publish or manage posts stored on the server.</p>
-      <form id="login-form" class="form" autocomplete="off" novalidate>
-        <label class="field">
-          <span>Username</span>
-          <input id="username" name="username" type="text" required autocomplete="username" value="admin" />
-        </label>
-        <label class="field">
-          <span>Password</span>
-          <input id="password" name="password" type="password" required autocomplete="current-password" />
-        </label>
-        <div class="form-actions">
-          <button type="submit">Sign in</button>
-        </div>
-        <p id="login-error" class="error" role="alert" aria-live="polite"></p>
-      </form>
-    </section>
-
     <section id="feed-panel" class="panel" aria-label="Blog feed">
       <header class="panel-header">
         <h2>Blog posts</h2>
@@ -71,6 +52,25 @@
           <button id="clear-posts" type="button" class="danger">Clear all</button>
         </div>
         <p id="editor-message" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="auth-panel" class="panel" aria-label="Sign in">
+      <h2>Sign in</h2>
+      <p class="note">Use your admin credentials to publish or manage posts stored on the server.</p>
+      <form id="login-form" class="form" autocomplete="off" novalidate>
+        <label class="field">
+          <span>Username</span>
+          <input id="username" name="username" type="text" required autocomplete="username" value="brooklyn" />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input id="password" name="password" type="password" required autocomplete="current-password" />
+        </label>
+        <div class="form-actions">
+          <button type="submit">Sign in</button>
+        </div>
+        <p id="login-error" class="error" role="alert" aria-live="polite"></p>
       </form>
     </section>
   </main>

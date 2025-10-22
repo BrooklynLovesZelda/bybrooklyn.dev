@@ -16,11 +16,6 @@ python server.py
 
 Then open http://localhost:5000/blog/index.html to view the blog.
 
-### Default credentials
-
-- Username: `admin`
-- Password: `postcard-lake`
-
 To change the password, generate a SHA-256 hash and export it before starting the server:
 
 ```bash
