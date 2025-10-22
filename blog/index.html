@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brooklyn Halmstad — Blog</title>
+  <meta name="description" content="Personal blog area with secure publishing through a lightweight Python backend." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23221a44'/%3E%3Ctext x='50' y='60' font-size='46' text-anchor='middle' fill='%23ffffff' font-family='ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial'%3EBH%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <main class="wrap blog-wrap">
+    <header class="blog-header">
+      <div>
+        <h1>Brooklyn's Blog Studio</h1>
+        <p class="tagline">A lightweight space to publish updates for friends and the wider web.</p>
+      </div>
+      <a class="back-link" href="../index.html" aria-label="Back to main site">← Return home</a>
+    </header>
+    <hr />
+
+    <noscript>
+      <p class="notice">This page requires JavaScript for sign-in and saving posts.</p>
+    </noscript>
+
+    <section id="auth-panel" class="panel" aria-label="Sign in">
+      <h2>Sign in</h2>
+      <p class="note">Use your admin credentials to publish or manage posts stored on the server.</p>
+      <form id="login-form" class="form" autocomplete="off" novalidate>
+        <label class="field">
+          <span>Username</span>
+          <input id="username" name="username" type="text" required autocomplete="username" value="admin" />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input id="password" name="password" type="password" required autocomplete="current-password" />
+        </label>
+        <div class="form-actions">
+          <button type="submit">Sign in</button>
+        </div>
+        <p id="login-error" class="error" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="feed-panel" class="panel" aria-label="Blog feed">
+      <header class="panel-header">
+        <h2>Blog posts</h2>
+        <button id="sign-out" type="button" class="hidden" hidden>Sign out</button>
+      </header>
+      <p class="note">
+        <span id="visitor-note">Browse the latest updates below.</span>
+        <span id="admin-note" class="hidden">You are signed in. Anything you publish appears here instantly.</span>
+      </p>
+
+      <div id="posts" class="post-list" aria-live="polite"></div>
+
+      <form id="post-form" class="editor hidden" hidden autocomplete="off">
+        <h3>Create a post</h3>
+        <label class="field">
+          <span>Title</span>
+          <input id="post-title" name="title" type="text" required placeholder="Something exciting…" />
+        </label>
+        <label class="field">
+          <span>Content</span>
+          <textarea id="post-body" name="body" required rows="6" placeholder="Share your latest update."></textarea>
+        </label>
+        <div class="actions">
+          <button id="publish-post" type="submit">Publish post</button>
+          <button id="export-posts" type="button">Export posts</button>
+          <button id="clear-posts" type="button" class="danger">Clear all</button>
+        </div>
+        <p id="editor-message" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="blog.js" type="module"></script>
+</body>
+</html>

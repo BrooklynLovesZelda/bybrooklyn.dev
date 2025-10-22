@@ -1,0 +1,23 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Local database and generated files
+blog.db
+*.sqlite3
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
