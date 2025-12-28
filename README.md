@@ -1,6 +1,6 @@
-# CachyOS Website
+# Brook — Personal Site
 
-Static site for CachyOS, built with Astro. Origin: `https://cachyos.org/`.
+Static personal site for Brook, built with Astro. Origin: `https://brooklyn.dev/` (update to your final domain).
 
 ## Scripts
 

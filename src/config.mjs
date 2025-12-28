@@ -1,15 +1,14 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'CachyOS',
+  name: 'Brook',
 
-  origin: 'https://cachyos.org/',
+  origin: 'https://bybrooklyn.dev/',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'CachyOS — Blazingly Fast OS based on Arch Linux',
-  description:
-    '🚀 CachyOS is an Arch Linux-based distribution that offers an easy installation, several customization options to suit every user, and special optimizations for improved performance while remaining simple.',
+  title: 'Brook — Student, computer enthusiast, and server tinkerer',
+  description: `I like computers. I build them, break them, and run servers on them. Hands-on student exploring Linux, hardware, and self-hosting.`,
   defaultImage: defaultImage,
 
   defaultTheme: 'dark', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"

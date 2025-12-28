@@ -3,17 +3,44 @@ import { SITE } from '~/config.mjs';
 
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
-import Note from '~/components/widgets/EditionsNote.astro';
-import Editions from '~/components/widgets/Editions.astro';
 
 const meta = {
-  title: `Download`,
-  description: `Find a suitable ${SITE.name} edition for your hardware.`,
+  title: `Links`,
+  description: `Find the best places to reach ${SITE.name} online.`,
   canonical: getCanonical(getPermalink('/download/')),
 };
 ---
 
 <Layout {meta}>
-  <Note />
-  <Editions />
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div class="space-y-3 text-left">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+        Links
+      </p>
+      <h1 class="text-3xl font-bold text-slate-900 dark:text-white font-heading">
+        Where to find me
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        If you want to see what I’m tinkering with or just say hi, start here.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      <a
+        href="https://github.com/BrooklynLovesZelda"
+        class="rounded-[32px] border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900/70"
+      >
+        <div class="text-sm font-semibold text-blue-600 dark:text-blue-300">GitHub</div>
+        <div class="mt-2 text-xl font-bold text-slate-900 dark:text-white">BrooklynLovesZelda</div>
+        <p class="mt-1 text-slate-600 dark:text-slate-400">Projects, experiments, and configs.</p>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/zakary-halmstad-741211315/"
+        class="rounded-[32px] border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900/70"
+      >
+        <div class="text-sm font-semibold text-blue-600 dark:text-blue-300">LinkedIn</div>
+        <div class="mt-2 text-xl font-bold text-slate-900 dark:text-white">Zakary Halmstad</div>
+        <p class="mt-1 text-slate-600 dark:text-slate-400">Quick snapshot of what I’m learning.</p>
+      </a>
+    </div>
+  </section>
 </Layout>

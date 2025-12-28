@@ -47,6 +47,6 @@ export const generateDownloadLink = (
     case ISOSource.SOURCEFORGE:
       return `${sourceforge_base_link}/${edition}/${release}/cachyos-${edition}-linux-${release}.iso/download`;
     case ISOSource.TORRENT:
-      return `${torrent_base_link}//cachyos-${edition}-linux-${release}.torrent`;
+      return `${torrent_base_link}/${edition}/${release}/cachyos-${edition}-linux-${release}.torrent`;
   }
 };

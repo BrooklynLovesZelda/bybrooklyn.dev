@@ -1,17 +1,21 @@
 ---
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
-import Distribution from '~/components/widgets/AboutDistribution.astro';
-import Team from '~/components/widgets/Team.astro';
+import About from '~/components/widgets/About.astro';
+import Skills from '~/components/widgets/Skills.astro';
+import Server from '~/components/widgets/Server.astro';
+import EducationContact from '~/components/widgets/EducationContact.astro';
 
 const meta = {
-  title: `About us`,
-  description: `Learn more about us.`,
+  title: `About Brook`,
+  description: `Get to know Brook: student, computer enthusiast, and server tinkerer.`,
   canonical: getCanonical(getPermalink('/about/')),
 };
 ---
 
 <Layout {meta}>
-  <Distribution />
-  <Team />
+  <About />
+  <Skills />
+  <Server />
+  <EducationContact />
 </Layout>

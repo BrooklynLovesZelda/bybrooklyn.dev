@@ -1,0 +1,81 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const education = {
+  school: 'Sayreville War Memorial High School',
+  status: 'Student',
+};
+
+const contact = {
+  githubUrl: 'https://github.com/BrooklynLovesZelda',
+  linkedinUrl: 'https://www.linkedin.com/in/zakary-halmstad-741211315/',
+  email: 'brooklyn.halmstad@proton.me',
+  statusUrl: 'https://status.bybrooklyn.dev/status/server',
+};
+---
+
+<section class="scroll-mt-20 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div
+        id="education"
+        class="glass-card p-8 text-left transition-shadow duration-200 hover:shadow-2xl hover:shadow-slate-900/15"
+      >
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+          Education
+        </p>
+        <h3 class="mt-3 text-2xl font-bold text-slate-900 dark:text-white font-heading">
+          {education.school}
+        </h3>
+        <p class="text-lg text-slate-700 dark:text-slate-300 mt-2">{education.status}</p>
+      </div>
+
+      <div
+        id="contact"
+        class="glass-card px-6 py-8 text-left text-white transition-shadow duration-200 hover:shadow-2xl hover:shadow-slate-900/15 dark:text-white"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/60 via-white/10 to-transparent opacity-60 dark:from-white/10 dark:via-white/5"
+          aria-hidden="true"
+        />
+        <p class="relative text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+          Contact
+        </p>
+        <h2 class="relative mt-3 text-2xl font-bold font-heading text-slate-900 dark:text-white">
+          Let’s connect
+        </h2>
+        <p class="relative text-slate-700 dark:text-slate-200 mt-2">
+          Always happy to talk hardware builds, Linux tuning, or home-lab setups.
+        </p>
+        <div class="relative mt-5 flex flex-wrap gap-3">
+          <a
+            href={contact.githubUrl}
+            class="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-3 text-slate-900 font-semibold shadow transition backdrop-blur"
+          >
+            <Icon name="tabler:brand-github" class="w-5 h-5" /> GitHub
+          </a>
+          <a
+            href={contact.linkedinUrl}
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 px-4 py-3 text-white font-semibold shadow hover:bg-slate-900 transition backdrop-blur"
+          >
+            <Icon name="tabler:brand-linkedin" class="w-5 h-5" /> LinkedIn
+          </a>
+          {contact.email && (
+            <a
+              href={`mailto:${contact.email}`}
+              class="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-3 text-slate-900 dark:text-white font-semibold shadow hover:bg-white/15 transition backdrop-blur bg-white/20"
+            >
+              <Icon name="tabler:mail" class="w-5 h-5" /> Email
+            </a>
+          )}
+          <a
+            href={contact.statusUrl}
+            class="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-3 text-slate-900 dark:text-white font-semibold shadow hover:bg-white/15 transition backdrop-blur bg-white/20"
+          >
+            <Icon name="tabler:activity" class="w-5 h-5" /> Server status
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

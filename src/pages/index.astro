@@ -4,12 +4,11 @@ import { SITE } from '~/config.mjs';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import SupportUs from '~/components/widgets/SupportUs.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Sponsors from '~/components/widgets/Sponsors.astro';
+import HeroPersonal from '~/components/widgets/HeroPersonal.astro';
+import About from '~/components/widgets/About.astro';
+import Skills from '~/components/widgets/Skills.astro';
+import Server from '~/components/widgets/Server.astro';
+import EducationContact from '~/components/widgets/EducationContact.astro';
 
 const meta = {
   title: SITE.title,
@@ -19,10 +18,9 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <Hero />
-  <Note />
-  <Features />
-  <SupportUs />
-  <CallToAction />
-  <Sponsors />
+  <HeroPersonal />
+  <About />
+  <Skills />
+  <Server />
+  <EducationContact />
 </Layout>

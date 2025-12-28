@@ -1,0 +1,49 @@
+---
+const skills = {
+  operatingSystems: ['Linux (Fedora, Arch, CachyOS)', 'Windows'],
+  servers: ['Self-hosting', 'Docker', 'Portainer'],
+  hardware: ['PC building', 'Troubleshooting', 'Upgrades'],
+  other: ['Basic networking', 'System monitoring'],
+};
+
+const cards = [
+  { title: 'Operating Systems', items: skills.operatingSystems },
+  { title: 'Servers & Self-Hosting', items: skills.servers },
+  { title: 'Hardware', items: skills.hardware },
+  { title: 'Other', items: skills.other },
+];
+---
+
+<section class="scroll-mt-20 border-t border-slate-200 dark:border-slate-800" id="skills">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div class="mb-10 space-y-3 text-left">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+        Skills
+      </p>
+      <h2 class="text-3xl font-bold text-slate-900 dark:text-white font-heading">
+        The stack I’m most comfortable with
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        A mix of Linux, self-hosting, and hands-on hardware work.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        cards.map(({ title, items }) => (
+          <div class="glass-card p-6 transition-shadow duration-200 hover:shadow-2xl hover:shadow-slate-900/15">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">{title}</h3>
+            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
+              {items.map((item) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

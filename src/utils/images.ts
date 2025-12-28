@@ -56,7 +56,7 @@ export const findImage = async (
 /** */
 export const adaptOpenGraphImages = async (
   openGraph: OpenGraph = {},
-  astroSite: URL | undefined = new URL('')
+  astroSite?: URL
 ): Promise<OpenGraph> => {
   if (!openGraph?.images?.length) {
     return openGraph;
@@ -84,8 +84,14 @@ export const adaptOpenGraphImages = async (
         });
 
         if (typeof _image === 'object') {
+          const base = astroSite instanceof URL ? astroSite : undefined;
           return {
-            url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : 'pepe',
+            url:
+              typeof _image.src === 'string'
+                ? base
+                  ? String(new URL(_image.src, base))
+                  : String(_image.src)
+                : '',
             width: typeof _image.options.width === 'number' ? _image.options.width : undefined,
             height: typeof _image.options.height === 'number' ? _image.options.height : undefined,
           };

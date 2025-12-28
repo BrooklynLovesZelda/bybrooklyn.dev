@@ -1,0 +1,42 @@
+---
+const about = `I run my own server called Harvey V3, which I use mainly for self-hosting and learning. It runs Linux, and most services are managed with Docker and Portainer, which keeps everything organized and easy to manage. Running my own server has taught me how systems work, how to troubleshoot problems, and how to keep things running reliably. I prefer hosting things myself instead of relying on external services.`;
+
+const interests = [
+  'Building and upgrading PCs',
+  'Running and configuring Linux',
+  'Learning how operating systems work',
+  'Tuning performance and stability',
+];
+---
+
+<section class="scroll-mt-20" id="about">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div class="flex flex-col gap-6 text-left">
+      <div class="space-y-3 text-left">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+          About
+        </p>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white font-heading">
+          Learning by building, breaking, and fixing
+        </h2>
+      </div>
+      <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 text-left">
+        {about}
+      </p>
+      <div class="space-y-3 text-left" id="interests">
+        <h3 class="text-base font-semibold text-slate-900 dark:text-white">What I’m into right now</h3>
+        <div class="flex flex-wrap gap-2">
+          {
+            interests.map((item) => (
+              <span
+                class="rounded-full border border-white/30 bg-white/30 px-3 py-1 text-sm font-medium text-slate-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 backdrop-blur"
+              >
+                {item}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

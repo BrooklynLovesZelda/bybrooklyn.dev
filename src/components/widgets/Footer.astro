@@ -1,45 +1,43 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { getHomePermalink, getAsset } from '~/utils/permalinks';
-import ImprintButton from './ImprintButton';
+import { getHomePermalink } from '~/utils/permalinks';
+
+const home = getHomePermalink();
+const anchor = (id: string) => `${home}#${id}`;
 
 const links = [
   {
-    title: 'Product',
+    title: 'Explore',
     items: [
-      { title: 'Features', href: 'https://wiki.cachyos.org/cachyos_basic/why_cachyos/' },
-      { title: 'Team', href: '/about/#team' },
+      { title: 'About', href: anchor('about') },
+      { title: 'Interests', href: anchor('interests') },
+      { title: 'Skills', href: anchor('skills') },
     ],
   },
   {
-    title: 'Support',
+    title: 'Workbench',
     items: [
-      { title: 'Docs', href: 'https://wiki.cachyos.org/' },
-      { title: 'Community Forum', href: 'https://discuss.cachyos.org/' },
+      { title: 'Harvey V3 server', href: anchor('server') },
+      { title: 'Status page', href: 'https://status.bybrooklyn.dev/status/server' },
+      { title: 'Education', href: anchor('education') },
     ],
   },
   {
-    title: 'Distribution',
+    title: 'Connect',
     items: [
-      { title: 'About', href: '/about/#distribution' },
-      //{ title: 'Blog', href: '#' },
+      { title: 'GitHub', href: 'https://github.com/BrooklynLovesZelda' },
+      { title: 'LinkedIn', href: 'https://www.linkedin.com/in/zakary-halmstad-741211315/' },
     ],
   },
 ];
 
 const social = [
-  { label: 'X', icon: 'tabler:brand-x', href: 'https://x.com/cachyos' },
+  { label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/BrooklynLovesZelda' },
   {
-    label: 'Discord',
-    icon: 'tabler:brand-discord',
-    href: 'https://discord.gg/cachyos-862292009423470592',
+    label: 'LinkedIn',
+    icon: 'tabler:brand-linkedin',
+    href: 'https://www.linkedin.com/in/zakary-halmstad-741211315/',
   },
-  { label: 'Mastodon', icon: 'tabler:brand-mastodon', href: 'https://fosstodon.org/@CachyOS' },
-  { label: 'Reddit', icon: 'tabler:brand-reddit', href: 'https://www.reddit.com/r/cachyos' },
-  { label: 'Patreon', icon: 'tabler:brand-patreon', href: 'https://www.patreon.com/CachyOS' },
-  { label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/cachyos' },
-  { label: 'Mail', icon: 'tabler:mail-opened', href: 'mailto:admin@cachyos.org' },
-  { label: 'RSS Feed', icon: 'tabler:rss', href: getAsset('/rss.xml') },
 ];
 ---
 
@@ -48,20 +46,11 @@ const social = [
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>CachyOS</a>
-        </div>
-        <div class="text-sm text-muted">
-          <a
-            class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2"
-            href="https://wiki.cachyos.org/policy/terms_of_service/">Terms</a
-          >
-          <a
-            class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2"
-            href="https://wiki.cachyos.org/policy/privacy_policy/">Privacy Policy</a
-          >
-          <ImprintButton client:load />
-        </div>
+        <a class="inline-block font-bold text-xl" href={getHomePermalink()}>Bybrooklyn.dev</a>
+        <p class="text-sm text-muted mt-2 max-w-md">
+          Student and hands-on tinkerer who learns by building, breaking, and fixing computers and
+          servers.
+        </p>
       </div>
       {
         links.map(({ title, items }) => (
@@ -93,7 +82,7 @@ const social = [
           social.map(({ label, href, icon }) => (
             <li>
               <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5 inline-flex items-center"
                 aria-label={label}
                 href={href}
               >
@@ -105,16 +94,14 @@ const social = [
       </ul>
 
       <div class="text-sm mr-4 dark:text-slate-400">
-        <span
-          class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-xs bg-[url(~/assets/images/logo.svg)]"
-        >
-        </span>
-        Made by <a
+        Built by Brook. Forked from the CachyOS website –
+        <a
           class="text-blue-600 dark:text-white font-bold decoration-slate-400 decoration-dotted underline"
-          href="https://cachyos.org/"
+          href="https://github.com/cachyos/cachyos.org"
         >
-          CachyOS</a
-        > · All rights reserved.
+          source on GitHub
+        </a
+        >. Thanks for stopping by.
       </div>
     </div>
   </div>

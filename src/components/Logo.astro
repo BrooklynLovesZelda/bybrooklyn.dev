@@ -1,18 +1,9 @@
 ---
-import logoSrc from '~/assets/images/logo.svg';
+const name = 'Bybrooklyn.dev';
 ---
 
-<img
-  class="self-center"
-  src={logoSrc.src}
-  loading="eager"
-  decoding="async"
-  alt="CachyOS logo"
-  width="32"
-  height="32"
-/>
-<span
-  class="self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  CachyOS</span
->
+<div class="flex items-center gap-2">
+  <span class="text-xl md:text-lg font-bold text-gray-900 whitespace-nowrap dark:text-white">
+    {name}
+  </span>
+</div>

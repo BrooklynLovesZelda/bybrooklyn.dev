@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components';
+const role = 'Student • Computer Enthusiast • Server & Linux Nerd';
+const tagline = 'I like computers. I build them, break them, and run servers on them.';
+const shortBio = `I'm a student at Sayreville War Memorial High School who is really into how computers work. I spend a lot of my free time building PCs, running Linux, and learning by experimenting on my own hardware. I like figuring things out hands-on, even if that means breaking things first and fixing them later.`;
+
+const githubUrl = 'https://github.com/BrooklynLovesZelda';
+const linkedinUrl = 'https://www.linkedin.com/in/zakary-halmstad-741211315/';
+---
+
+<section class="relative overflow-visible">
+  <div
+    class="absolute inset-x-0 -top-72 -z-10 mx-auto h-[520px] max-w-6xl rounded-full blur-3xl bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-cyan-300/20"
+    aria-hidden="true"
+  />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-24 lg:py-28">
+    <div class="space-y-6 max-w-5xl text-left">
+      <p class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700 dark:bg-slate-800/80 dark:text-blue-200">
+        {role}
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+        {tagline}
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+        {shortBio}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn btn-primary font-semibold h-12 px-5 inline-flex items-center gap-2" href={githubUrl}>
+          <Icon name="tabler:brand-github" class="w-5 h-5" /> GitHub
+        </a>
+        <a class="btn font-semibold h-12 px-5 inline-flex items-center gap-2" href={linkedinUrl}>
+          <Icon name="tabler:brand-linkedin" class="w-5 h-5" /> LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

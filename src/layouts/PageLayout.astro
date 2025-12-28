@@ -13,13 +13,19 @@ const { meta } = Astro.props;
 ---
 
 <Layout {meta}>
-  <slot name="header">
-    <Header />
-  </slot>
-  <main>
-    <slot />
-  </main>
-  <slot name="footer">
-    <Footer />
-  </slot>
+  <div class="relative overflow-visible">
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 h-[520px] max-w-6xl mx-auto -z-10 rounded-[999px] blur-3xl bg-gradient-to-b from-blue-600/30 via-slate-900/35 to-transparent"
+      aria-hidden="true"
+    />
+    <slot name="header">
+      <Header />
+    </slot>
+    <main>
+      <slot />
+    </main>
+    <slot name="footer">
+      <Footer />
+    </slot>
+  </div>
 </Layout>
